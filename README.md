@@ -15,6 +15,8 @@ In your solution, it is especially important that you follow best practices such
 * list items in shopping list with RecyclerView
 * click anywhere on the item flips the switch and adds itself to the shopping list
 * shopping list is stored in sharedpreferences and persists across sessions
+* the user must have the ability to share their list of selected items as a plain text object using the external app of their choice
+* when the list is shared, display a notification telling them that is has been shared
 
 ### Tips
 * build a POJO class which will step through the values in the provided Constants files and return a list of ShoppingItems
