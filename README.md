@@ -22,6 +22,7 @@ In your solution, it is especially important that you follow best practices such
 * app must implement a custom theme and launcher icon, however you do not need to have multuple themes nor do you need to allow the user to change themes, the customization of your theme may be just your own color scheme
 
 ### Tips
+* the version of the list in this graphic implements sort functionality on the list. This is not required, however, you may add it as a challenge
 * build a java class which will step through the values in the provided Constants file and return a list of ShoppingItems
 * the ShoppingItem class will be a POJO class consisting of the name, the resource id for the image, and the id for the item (this works well as the index of the value in the constants file, the i value as you step through it)
 * store a CSV string of selected ids, add and remove ids from this list as you select and unselect items 
