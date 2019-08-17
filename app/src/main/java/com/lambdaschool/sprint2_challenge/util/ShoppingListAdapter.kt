@@ -9,7 +9,10 @@ import com.lambdaschool.sprint2_challenge.R
 import com.lambdaschool.sprint2_challenge.model.ShoppingListModel
 import kotlinx.android.synthetic.main.shopping_list_items.view.*
 
-class ShoppingListAdapter (val shoppingList: MutableList<ShoppingListModel>): RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+
+class ShoppingListAdapter (val shoppingList: MutableList<ShoppingListModel>):
+        RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
                 LayoutInflater.from(parent.context)
@@ -24,7 +27,6 @@ class ShoppingListAdapter (val shoppingList: MutableList<ShoppingListModel>): Re
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val shopping = shoppingList[position]
         holder.bindModel(shopping)
-
         holder.shoppingItemView.setOnClickListener {
             if (shopping.choose) {
                 shopping.choose = false
@@ -32,6 +34,7 @@ class ShoppingListAdapter (val shoppingList: MutableList<ShoppingListModel>): Re
             } else {
                 shopping.choose = true
                 notifyItemChanged(position)
+                holder.shoppingNameView.text = shoppingList[position].name
             }
         }
     }
@@ -44,6 +47,8 @@ class ShoppingListAdapter (val shoppingList: MutableList<ShoppingListModel>): Re
         fun bindModel(shopping: ShoppingListModel) {
             shoppingIconView.setImageResource(shopping.icon)
             shoppingNameView.text = shopping.name
+
+
             if (shopping.choose) {
                 shoppingItemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorAccent))
             } else
